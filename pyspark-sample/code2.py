@@ -20,10 +20,7 @@ df.show(5)
 # Assuming you already have a SparkSession and DataFrame (df) created...
 
 # Save the DataFrame as a CSV file
-df.write.format("csv").option("header", True).save(
-    "/home/ubuntu/Downloads/spline-poc-spark/datacamp_courses_edited.csv"
-)
-
+df.write.mode("overwrite").parquet("/home/ubuntu/Downloads/spline-poc-spark/datacamp_courses.parquet")
 
 # Stop the SparkSession
 spark.stop()
